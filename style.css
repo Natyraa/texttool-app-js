@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  margin-top: 40px;
+  
+}
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: max-content;
+  margin-bottom : 10px;
+  margin-right: 10px;
+  
+}
+#uppercase-button , #lowercase-button , 
+#capitalize-button , #reverse-words-button {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(240, 234, 234);
+  font-style: italic;
+  border: 1px solid grey;
+}
+#color {
+  width: 100%;
+}
+.middle-section {
+  display: flex;
+  flex-direction: column;
+  
+}
+.lower-middle-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#textarea {
+  resize: none;
+  padding: 5px;
+}
+#old-words-button , #new-words-button ,
+#replace-button {
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 10px;
+  padding: 5px;
+  width: 100px;
+  font-style: italic;
+ 
+}
+#replace-button {
+  border-radius: 8px;
+}
+
+.right-section {
+  margin-left: 10px;
+  border: 1px solid grey;
+  height: 227px;
+  width: 180px;
+  padding: 5px;
+  font-style:italic;
+}
