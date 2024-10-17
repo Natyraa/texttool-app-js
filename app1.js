@@ -11,6 +11,7 @@ const color = document.querySelector('#color')
 const oldWords = document.querySelector('#old-words-input');
 const newWords = document.querySelector('#new-words-input')
 const replaceButton = document.querySelector('#replace-button')
+const textArea = document.querySelector('#textarea')
 
 const getInformation = () => {
   let text = textInput.value;
@@ -37,7 +38,7 @@ upCaseButton.addEventListener('click' , () => {
   const toUpperCase = words.map((c) => 
      c.toUpperCase()).join(' ');
      textInput.value = toUpperCase;
- const analyzeText = getInformation()
+
 })
 
 loCaseButton.addEventListener('click',  () => {
@@ -46,14 +47,14 @@ loCaseButton.addEventListener('click',  () => {
   const toLowerCase = words.map((c) => 
   c.toLowerCase()).join(' ')
   textInput.value = toLowerCase;
-  const analyzeText = getInformation()
+ 
 })
 capButton.addEventListener('click' , ()=> {
   let text = textInput.value;
   let words = text.split(' ');
   const capitalize = words.map((c) => c.charAt(0).toUpperCase() + c.slice(1)).join(' ');
   textInput.value = capitalize;
-  const analyzeText = getInformation()
+ 
 })
 revWordsButton.addEventListener('click' , () => {
   const text = textInput.value;
@@ -61,7 +62,7 @@ revWordsButton.addEventListener('click' , () => {
   const reverseWords = words.map((c) => 
   c.split('').reverse().join('')).join(' ')
   textInput.value = reverseWords;
-  const analyzeText = getInformation()
+ 
 })
 color.addEventListener('input' , function() {
   const colorValue =  this.value;
@@ -78,5 +79,7 @@ replaceButton.addEventListener('click' , () => {
   } 
   const newText = words.map(word => word === oldW ? newW : word).join(' ')
  textInput.value = newText
- const analyzeText = getInformation()
+
 })
+
+textArea.addEventListener('input' , getInformation)
