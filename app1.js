@@ -14,6 +14,7 @@ const replaceButton = document.querySelector('#replace-button')
 const textArea = document.querySelector('#textarea')
 const bgColor = document.querySelector('#bg-color')
 const container = document.querySelector('.container')
+const mostFrequentCharacter = document.querySelector('#most-frequent-char')
 const getInformation = () => {
   let text = textInput.value;
   const words = text.trim().split(' ');
@@ -21,7 +22,23 @@ const getInformation = () => {
   const longWord = words.reduce((longest , current) => 
    current.length > longest.length ? current : longest
   )
-  
+  const mostFrequentChar = () => {
+    let mostFrqChar = "";
+    let maxFrequency = 0;
+    for (i = 0 ;i < text.length ; i++) {
+      let count = 0;
+      for (let j = 0  ; j < text.length ; j++) {
+        if (text[i] === text[j]) {
+          count++
+        }
+      }
+      if (count > maxFrequency) {
+        maxFrequency = count ;
+        mostFrqChar = text[i];
+       }
+    }
+    return mostFrqChar;
+  }
   const countWord  = words.length;
   const countChars = chars.length;
   const countNumbers = words.filter((c) => 
@@ -30,6 +47,7 @@ const getInformation = () => {
  chars1.innerHTML = `Chars : ${countChars}`;
   longestWord.innerHTML = `Longest Word : ${longWord}`;
   numbers.innerHTML = `Numbers :${countNumbers}`
+  mostFrequentCharacter.innerHTML = `Most Frequent Char: ${mostFrequentChar()}`
 }
 
 
