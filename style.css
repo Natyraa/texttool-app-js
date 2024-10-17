@@ -23,7 +23,7 @@
   font-style: italic;
   border: 1px solid grey;
 }
-#color {
+#color , #bg-color {
   width: 100%;
 }
 .middle-section {

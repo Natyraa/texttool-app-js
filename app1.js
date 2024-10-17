@@ -12,7 +12,8 @@ const oldWords = document.querySelector('#old-words-input');
 const newWords = document.querySelector('#new-words-input')
 const replaceButton = document.querySelector('#replace-button')
 const textArea = document.querySelector('#textarea')
-
+const bgColor = document.querySelector('#bg-color')
+const container = document.querySelector('.container')
 const getInformation = () => {
   let text = textInput.value;
   const words = text.trim().split(' ');
@@ -68,7 +69,10 @@ color.addEventListener('input' , function() {
   const colorValue =  this.value;
   textInput.style.color = colorValue;
 })
-
+bgColor.addEventListener('input' , function() {
+  const bgColorValue = this.value;
+  textInput.style.background = bgColorValue
+})
 replaceButton.addEventListener('click' , () => {
   const text = textInput.value;
   const newW = newWords.value;
